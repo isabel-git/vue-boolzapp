@@ -45,6 +45,7 @@ aside.left{
     overflow: auto;
     height: calc(100% - 80px);
 }
+
 /* inizio aside destro */
 aside.right{
     flex-grow: 1;
