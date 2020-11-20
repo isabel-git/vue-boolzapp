@@ -5,3 +5,36 @@
     box-sizing: border-box;
     font-family: 'Lato';
 }
+.container{
+    height: 100vh;
+    padding: 10px 10%;
+    background-color: green;
+}
+main{
+    height: 100%;
+}
+/* regole parte superiore */
+section.top{
+    height: 100px;
+    background-color: grey;
+}
+/* regole parte inferiore */
+main section.bottom{
+    display: flex;
+    height: calc(100vh - 120px);
+    background-color: rebeccapurple;
+} 
+aside.left{
+    width: 200px;
+    height: 100%;
+    /* regole di debug */
+    border: 1px solid;
+    /* fine debug */
+}
+aside.right{
+    flex-grow: 1;
+    height: 100%;
+    /* regole di debug */
+    border: 1px solid;
+    /* fine debug */
+}
