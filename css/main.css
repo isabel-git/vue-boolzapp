@@ -8,34 +8,44 @@
 .container{
     height: 100vh;
     padding: 10px 10%;
-    background-color: green;
+    background: linear-gradient(0deg, rgb(233, 233, 233) 80%, rgb(0,161,138) 80%);
 }
+/* inizio corpo della pagina */
 main{
     height: 100%;
 }
-/* regole parte superiore */
+/* section superiore */
 section.top{
-    width: 100%;
+    /* width: 100%; */
     height: 70px;
-    background-color: grey;
+    background-color: rgb(233, 233, 233);
     /* position: fixed;
     z-index: 200;
     top: 0; */
 }
-/* regole parte inferiore */
+/* section inferiore */
 main section.bottom{
     display: flex;
     height: calc(100vh - 90px);
-    background-color: rebeccapurple;
 } 
+/* inizio aside sinistro */
 aside.left{
-    width: 200px;
+    width: 300px;
     height: 100%;
-    overflow: auto;
+    background-color: white;
     /* regole di debug */
     border: 1px solid;
     /* fine debug */
 }
+.blu-banner{
+    height: 80px;
+    background-color: rgb(93, 218, 255);
+}
+.contact{
+    overflow: auto;
+    height: calc(100% - 80px);
+}
+/* inizio aside destro */
 aside.right{
     flex-grow: 1;
     height: 100%;
@@ -44,12 +54,14 @@ aside.right{
     /* fine debug */
 }
 .chat{
-   height: calc(100% - 70px); 
-   overflow: auto;
-   /* regole di debug */
-   border: 1px solid red;
+    height: calc(100% - 70px); 
+    overflow: auto;
+    background-image: url(../img/sfondo.png);
+    /* regole di debug */
+    border: 1px solid red;
    /* fine debug */
 }
+
 /* inizio prova overflow */
 .prova{
     width: 100px;
@@ -61,6 +73,7 @@ aside.right{
 
 .text-bar{
     height: 70px;
+    background-color: rgb(244, 238, 232);
     /* regole di debug */
     border: 1px solid white;
     /* fine debug */
