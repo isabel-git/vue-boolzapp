@@ -15,18 +15,23 @@ main{
 }
 /* regole parte superiore */
 section.top{
-    height: 100px;
+    width: 100%;
+    height: 70px;
     background-color: grey;
+    /* position: fixed;
+    z-index: 200;
+    top: 0; */
 }
 /* regole parte inferiore */
 main section.bottom{
     display: flex;
-    height: calc(100vh - 120px);
+    height: calc(100vh - 90px);
     background-color: rebeccapurple;
 } 
 aside.left{
     width: 200px;
     height: 100%;
+    overflow: auto;
     /* regole di debug */
     border: 1px solid;
     /* fine debug */
@@ -36,5 +41,27 @@ aside.right{
     height: 100%;
     /* regole di debug */
     border: 1px solid;
+    /* fine debug */
+}
+.chat{
+   height: calc(100% - 70px); 
+   overflow: auto;
+   /* regole di debug */
+   border: 1px solid red;
+   /* fine debug */
+}
+/* inizio prova overflow */
+.prova{
+    width: 100px;
+    height: 100px;
+    border: 1px solid;
+    margin: 40px;
+}
+/* fine prova */
+
+.text-bar{
+    height: 70px;
+    /* regole di debug */
+    border: 1px solid white;
     /* fine debug */
 }
