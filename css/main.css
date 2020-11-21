@@ -5,9 +5,16 @@
     box-sizing: border-box;
     font-family: 'Lato';
 }
+a{
+    text-decoration: none;
+    color: black;
+}
+li{
+    list-style: none;
+}
 .container{
     height: 100vh;
-    padding: 10px 10%;
+    padding: 10px 8%;
     background: linear-gradient(0deg, rgb(233, 233, 233) 80%, rgb(0,161,138) 80%);
 }
 /* inizio corpo della pagina */
@@ -28,29 +35,74 @@ main section.bottom{
     display: flex;
     height: calc(100vh - 90px);
 } 
-/* inizio aside sinistro */
+
+/***** inizio aside sinistro ******/
 aside.left{
-    width: 300px;
+    width: 350px;
     height: 100%;
     background-color: white;
-    /* regole di debug */
+    /* regole di debug 
     border: 1px solid;
     /* fine debug */
 }
 .blu-banner{
     height: 80px;
+    padding: 10px;
     background-color: rgb(93, 218, 255);
 }
-.contact{
-    overflow: auto;
-    height: calc(100% - 80px);
+i.fa-bell-slash{
+    background-color: white;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 25px;
+    color: rgb(93, 218, 255);
 }
+.text{
+    font-size: 11px;
+    display: inline-block;
+    width: 70%;
+}
+.search-contact{
+    background-color: rgb(228, 228, 228);
+    height: 40px;
+    padding: 5px 10px;
+    /* border: 1px solid black; */
+}
+.search-contact input{
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgb(214, 214, 214);
+    border-radius: 1px;
+}
+/* contatti */
+.contacts{
+    overflow: auto;
+    height: calc(100% - 120px);
+}
+.contact{
+    display: flex;
+    align-items: center;
+    height: 80px;
+    border-top: 1px solid rgb(214, 214, 214);
+    padding: 10px;
+}
+.contact:hover{
+    background-color: rgb(214, 214, 214);
+}
+.contact img{
+    width: 60px;
+    border-radius: 50%;
+}
+.name{
+    font-size: 16px;
+}
+/* fine aside */
 
-/* inizio aside destro */
+/****** inizio aside destro ******/
 aside.right{
     flex-grow: 1;
     height: 100%;
-    /* regole di debug */
+    /* regole di debug 
     border: 1px solid;
     /* fine debug */
 }
@@ -62,20 +114,26 @@ aside.right{
     border: 1px solid red;
    /* fine debug */
 }
-
-/* inizio prova overflow */
-.prova{
-    width: 100px;
-    height: 100px;
-    border: 1px solid;
-    margin: 40px;
-}
-/* fine prova */
-
 .text-bar{
     height: 70px;
     background-color: rgb(244, 238, 232);
+    display: flex;
+    /* align-items: center; */
     /* regole di debug */
     border: 1px solid white;
     /* fine debug */
 }
+.text-bar .emoji,
+.text-bar .audio{
+    display: flex;
+    align-items: center;
+}
+.text-bar i{
+    margin: 0 10px;
+    font-size: 30px;
+    color: rgb(109, 109, 109);
+}
+.text-bar input{
+    flex-grow: 1;
+}
+/* fine aside */
