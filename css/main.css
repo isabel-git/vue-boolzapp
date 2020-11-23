@@ -19,36 +19,75 @@ li{
 }
 /* inizio corpo della pagina */
 main{
-    height: 100%;
-}
-/* section superiore */
-section.top{
-    /* width: 100%; */
-    height: 70px;
-    background-color: rgb(233, 233, 233);
-    /* position: fixed;
-    z-index: 200;
-    top: 0; */
-}
-/* section inferiore */
-main section.bottom{
     display: flex;
-    height: calc(100vh - 90px);
+    height: calc(100vh - 20px);
+    /* border: 1px soli red; */
 } 
-
 /***** inizio aside sinistro ******/
 aside.left{
-    width: 350px;
+    width: 500px;
     height: 100%;
     background-color: white;
     /* regole di debug 
     border: 1px solid;
     /* fine debug */
 }
-.blu-banner{
+/* section */
+section.left,
+section.right{
+    height: 70px;
+    background-color: rgb(233, 233, 233);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* padding: 0 10px; */
+}
+.box{
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    width: 100%;
+    /* border-top: 1px solid rgb(214, 214, 214); */
+    padding: 0 10px;
+}
+section .box{
+    align-items: center;
+}
+.contact{
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+.contact img{
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.text{
+    width: 70%;
+}
+.name{
+    font-size: 16px;
+}
+.font-small{
+    font-size: 11px;
+    /* color: gray; */
+}
+.icon i{
+    color: rgb(109, 109, 109);
+    font-size: 20px;
+    padding: 5px;
+}
+.blue-banner{
     height: 80px;
     padding: 10px;
     background-color: rgb(93, 218, 255);
+    display: flex;
+    align-items: center;
+}
+.blue-banner a{
+    color: blue;
+    text-decoration: underline;
 }
 i.fa-bell-slash{
     background-color: white;
@@ -57,69 +96,90 @@ i.fa-bell-slash{
     font-size: 25px;
     color: rgb(93, 218, 255);
 }
-.text{
-    font-size: 11px;
-    display: inline-block;
-    width: 70%;
-}
 .search-contact{
-    background-color: rgb(228, 228, 228);
+    background-color: rgb(245, 245, 245);
     height: 40px;
-    padding: 5px 10px;
+    padding: 5px;
     /* border: 1px solid black; */
 }
-.search-contact input{
-    width: 100%;
+.search-box{
+    background-color: white;
     height: 100%;
-    border: 1px solid rgb(214, 214, 214);
+}
+.search-contact input{
+    width: 90%;
+    height: 100%;
+    border: 0;
+    /* border: 1px solid rgb(214, 214, 214); */
     border-radius: 1px;
+    /* color: red; */
+}
+.search-contact i{
+    color: gray;
+    margin: 0 5px;
 }
 /* contatti */
 .contacts{
     overflow: auto;
-    height: calc(100% - 120px);
+    height: calc(100% - 190px);
 }
-.contact{
-    display: flex;
-    align-items: center;
-    height: 80px;
+.contacts .box{
     border-top: 1px solid rgb(214, 214, 214);
-    padding: 10px;
 }
-.contact:hover{
+.contacts .box:hover{
     background-color: rgb(214, 214, 214);
-}
-.contact img{
-    width: 60px;
-    border-radius: 50%;
-}
-.name{
-    font-size: 16px;
 }
 /* fine aside */
 
 /****** inizio aside destro ******/
 aside.right{
     flex-grow: 1;
+    flex-shrink: 2;
     height: 100%;
     /* regole di debug 
     border: 1px solid;
     /* fine debug */
 }
 .chat{
-    height: calc(100% - 70px); 
+    height: calc(100% - 140px); 
     overflow: auto;
     background-image: url(../img/sfondo.png);
-    /* regole di debug */
+    padding: 40px 10%;
+    /* regole di debug 
     border: 1px solid red;
    /* fine debug */
+}
+.chat ul{
+    display: flex;
+    flex-direction: column;
+}
+.message{
+    width: 45%;
+    min-height: 50px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.input{
+    background-color: rgb(188, 232, 168);
+    align-self: flex-end;
+}
+.output{
+    background-color: rgb(255, 255, 255);
+    align-self: flex-start;
+}
+.message .date{
+    align-self: flex-end;
 }
 .text-bar{
     height: 70px;
     background-color: rgb(244, 238, 232);
     display: flex;
+    padding: 5px;
     /* align-items: center; */
-    /* regole di debug */
+    /* regole di debug 
     border: 1px solid white;
     /* fine debug */
 }
@@ -129,7 +189,7 @@ aside.right{
     align-items: center;
 }
 .text-bar i{
-    margin: 0 10px;
+    margin: 0 15px;
     font-size: 30px;
     color: rgb(109, 109, 109);
 }
