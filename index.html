@@ -110,13 +110,14 @@
 
                     <!-- lista messaggi -->
                     <ul>
-                        <li class="message input" >
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit sed ut nesciunt quibusdam laudantium ad qui! Dignissimos consequuntur beatae quo dolores fuga quisquam aliquam laborum odio maiores, doloribus atque officiis!</p>
+                        <li class="message input" v-for="item in users[usersIndex].input">
+
+                            <p>{{ item }}</p>
                             <p class="font-small date">lorem</p>
                         </li>
 
-                        <li class="message output">
-                            <p>bla bla</p>
+                        <li class="message output" v-for="item in users[usersIndex].output">
+                            <p>{{ item }}</p>
                             <p class="font-small date">lorem</p>
                         </li>
 

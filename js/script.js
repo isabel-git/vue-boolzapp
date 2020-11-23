@@ -3,13 +3,22 @@ var app = new Vue({
     el: "#app",
     data: {
         usersIndex: 0,
-        // input: "",
-        // output: "",
         users: [{
             name: "Michele",
             image: "img/avatar_1.jpg",
-            input: ["rooooooooo"],
-            output: ["come stai?"]
+            input: ["ciao", "kooooooo", "kkkk+"],
+            output: ["come stai?", "jooooooooo"],
+            // message: [
+            //     {
+            //         stato: "input",
+            //         text: "ciao"
+            //     },
+
+            //     {
+            //         stato: "output",
+            //         text: "come stai?"
+            //     }
+            // ]
         },
         {
             name: "Fabio",
@@ -22,43 +31,42 @@ var app = new Vue({
             name: "Samuele",
             image: "img/avatar_3.jpg",
             input: ["ciao"],
-            output: ["come stai?"]
+            output: ["bffffffff"]
 
         },
         {
             name: "Mario",
             image: "img/avatar_4.jpg",
-            input: ["ciao"],
-            output: ["come stai?"]
+            input: ["ciao", "ciao", "ciao"],
+            output: ["cfdtg?"]
 
         },
         {
             name: "Luigi",
             image: "img/avatar_5.jpg",
-            input: ["ciao"],
+            input: ["bla bla"],
             output: ["come stai?"]
 
         },
         {
             name: "Luisa",
             image: "img/avatar_6.jpg",
-            input: ["ciao"],
-            output: ["come stai?"]
+            input: ["lorem ipsum"],
+            output: ["tutto apposto??"]
 
         },
         {
             name: "Claudio",
             image: "img/avatar_7.jpg",
-            input: ["ciao"],
-            output: ["come stai?"]
+            input: ["eiillaa"],
+            output: ["come stai?", "come stai?", "come stai?", "come stai?"]
 
         },
         {
             name: "Gio",
             image: "img/avatar_8.jpg",
-            input: ["ciao"],
-            output: ["come stai?"]
-
+            input: ["shiao beloooo"],
+            output: ["come stai?"],
         }],
 
     },
