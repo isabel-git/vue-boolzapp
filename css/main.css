@@ -42,7 +42,7 @@ section.right{
     justify-content: space-between;
     /* padding: 0 10px; */
 }
-.box{
+.contact{
     display: flex;
     justify-content: space-between;
     height: 70px;
@@ -50,15 +50,15 @@ section.right{
     /* border-top: 1px solid rgb(214, 214, 214); */
     padding: 0 10px;
 }
-section .box{
+section .contact{
     align-items: center;
 }
-.contact{
+.box{
     display: flex;
     align-items: center;
     flex-grow: 1;
 }
-.contact img{
+.box img{
     width: 50px;
     border-radius: 50%;
     margin-right: 15px;
@@ -123,10 +123,10 @@ i.fa-bell-slash{
     overflow: auto;
     height: calc(100% - 190px);
 }
-.contacts .box{
+.contacts .contact{
     border-top: 1px solid rgb(214, 214, 214);
 }
-.contacts .box:hover{
+.contacts .contact:hover{
     background-color: rgb(214, 214, 214);
 }
 /* fine aside */
@@ -197,3 +197,8 @@ aside.right{
     flex-grow: 1;
 }
 /* fine aside */
+
+/* al click */
+.active{
+    background-color: rgb(214, 214, 214);;
+}

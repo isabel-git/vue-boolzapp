@@ -12,7 +12,7 @@
 <body>
 
 
-    <div class="container">
+    <div class="container " id="app">
 
         <main>
 
@@ -21,9 +21,9 @@
 
                 <section class="left">
 
-                    <div class="box">
+                    <div class="contact">
 
-                        <div class="contact">
+                        <div class="box">
                             <img src="img/avatar_io.jpg" alt="">
 
                             <div class="text">
@@ -63,110 +63,12 @@
                 <!-- lista dei contatti -->
                 <ul class="contacts">
 
-                    <li class="box">
-                        <div class="contact">
-                            <img src="img/avatar_1.jpg" alt="">
+                    <li class="contact" v-for="(item, i) in users" @click="userClick(i)">
+                        <div class="box">
+                            <img :src="item.image" alt="">
 
                             <div class="text">
-                                <p class="name"><strong>Michele</strong></p>
-                                <p class="font-small" href="#">ok</p>
-                            </div>
-
-                        </div>
-
-                        <div class="font-small date">lorem</div>
-                    </li>
-
-                    <li class="box">
-                        <div class="contact">
-                            <img src="img/avatar_2.jpg" alt="">
-
-                            <div class="text">
-                                <p class="name"><strong>Fabio</strong></p>
-                                <p class="font-small" href="#">ok</p>
-                            </div>
-
-                        </div>
-
-                        <div class="font-small date">lorem</div>
-                    </li>
-
-                    <li class="box">
-                        <div class="contact">
-                            <img src="img/avatar_3.jpg" alt="">
-
-                            <div class="text">
-                                <p class="name"><strong>Samuele</strong></p>
-                                <p class="font-small" href="#">ok</p>
-                            </div>
-
-                        </div>
-
-                        <div class="font-small date">lorem</div>
-                    </li>
-
-                    <li class="box">
-                        <div class="contact">
-                            <img src="img/avatar_4.jpg" alt="">
-
-                            <div class="text">
-                                <p class="name"><strong>Mario</strong></p>
-                                <p class="font-small" href="#">ok</p>
-                            </div>
-
-                        </div>
-
-                        <div class="font-small date">lorem</div>
-                    </li>
-
-                    <li class="box">
-                        <div class="contact">
-                            <img src="img/avatar_5.jpg" alt="">
-
-                            <div class="text">
-                                <p class="name"><strong>Luigi</strong></p>
-                                <p class="font-small" href="#">ok</p>
-                            </div>
-
-                        </div>
-
-                        <div class="font-small date">lorem</div>
-                    </li>
-
-                    <li class="box">
-                        <div class="contact">
-                            <img src="img/avatar_6.jpg" alt="">
-
-                            <div class="text">
-                                <p class="name"><strong>Luisa</strong></p>
-                                <p class="font-small" href="#">ok</p>
-                            </div>
-
-                        </div>
-
-                        <div class="font-small date">lorem</div>
-                    </li>
-
-                    <li class="box">
-                        <div class="contact">
-                            <img src="img/avatar_7.jpg" alt="">
-
-                            <div class="text">
-                                <p class="name"><strong>Claudio</strong></p>
-                                <p class="font-small" href="#">ok</p>
-                            </div>
-
-                        </div>
-
-                        <div class="font-small date">lorem</div>
-                    </li>
-
-                    <li class="box">
-                        <div class="contact">
-                            <img src="img/avatar_8.jpg" alt="">
-
-                            <div class="text">
-                                <p class="name"><strong>GIO</strong></p>
+                                <p class="name"><strong>{{ item.name }}</strong></p>
                                 <p class="font-small" href="#">ok</p>
                             </div>
 
@@ -183,13 +85,13 @@
 
                 <section class="right">
 
-                    <div class="box">
+                    <div class="contact">
 
-                        <div class="contact">
-                            <img src="img/avatar_1.jpg" alt="">
+                        <div class="box">
+                            <img :src="users[usersIndex].image" alt="">
 
                             <div class="text">
-                                <p class="name"><strong>Michele</strong></p>
+                                <p class="name"><strong>{{ users[usersIndex].name }}</strong></p>
                                 <p class="font-small">Ultimo accesso oggi alle lorem</p>
                             </div>
                         </div>
@@ -208,7 +110,7 @@
 
                     <!-- lista messaggi -->
                     <ul>
-                        <li class="message input">
+                        <li class="message input" >
                             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit sed ut nesciunt quibusdam laudantium ad qui! Dignissimos consequuntur beatae quo dolores fuga quisquam aliquam laborum odio maiores, doloribus atque officiis!</p>
                             <p class="font-small date">lorem</p>
                         </li>
@@ -218,7 +120,7 @@
                             <p class="font-small date">lorem</p>
                         </li>
 
-                        <li class="message input">
+                        <!-- <li class="message input">
                             <p> bla bla bla </p>
                             <p class="font-small date">lorem</p>
                         </li>
@@ -231,7 +133,7 @@
                         <li class="message output">
                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore culpa in cumque aspernatur perspiciatis odio itaque accusantium eum ex laborum ratione nisi, sunt quia, excepturi suscipit velit, omnis recusandae ullam.</p>
                             <p class="font-small date">lorem</p>
-                        </li>
+                        </li> -->
 
                     </ul>
 
@@ -256,11 +158,6 @@
         </main>
 
     </div>
-
-
-    <!-- <div id="app" class="container">
-    </div> -->
-
 
     <script src="js/script.js"></script>
 </body>
