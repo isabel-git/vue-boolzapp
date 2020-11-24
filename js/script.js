@@ -241,14 +241,21 @@ var app = new Vue({
 
             this.newInput = "";
 
-            setTimeout(function () { // risposta
-                
+            
+            setTimeout(() => { // risposta
                 this.users[this.usersIndex].message.push({
                     status: "output",
                     text: "ok"
                 })
-            }.bind(this), 1000);
-
+            }, 1000);
+            
+            // setTimeout(function () { // modo alternativo
+                
+            //     this.users[this.usersIndex].message.push({
+            //         status: "output",
+            //         text: "ok"
+            //     })
+            // }.bind(this), 1000);
         }
     }
 

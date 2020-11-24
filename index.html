@@ -127,7 +127,7 @@
                         <i class="fa fa-smile-o" aria-hidden="true"></i>
                     </a>
 
-                    <input type="text" placeholder="Scrivi un messaggio" v-model="newInput">
+                    <input type="text" placeholder="Scrivi un messaggio" v-on:keydown.13="send" v-model="newInput">
 
                     <a href="#" class="audio">
                         <i class="fa fa-microphone" aria-hidden="true" @click="send"></i>
