@@ -3,10 +3,12 @@ var app = new Vue({
     el: "#app",
     data: {
         usersIndex: 0,
+        newInput: "",
         users: [{
             name: "Michele",
             image: "img/avatar_1.jpg",
             message: [
+
                 {
                     status: "input",
                     text: "ciao"
@@ -38,6 +40,7 @@ var app = new Vue({
             name: "Fabio",
             image: "img/avatar_2.jpg",
             message: [
+
                 {
                     status: "input",
                     text: "eilaaaa"
@@ -60,6 +63,7 @@ var app = new Vue({
             name: "Samuele",
             image: "img/avatar_3.jpg",
             message: [
+
                 {
                     status: "input",
                     text: "we we"
@@ -87,6 +91,7 @@ var app = new Vue({
             name: "Mario",
             image: "img/avatar_4.jpg",
             message: [
+
                 {
                     status: "output",
                     text: "ciaoh"
@@ -104,6 +109,7 @@ var app = new Vue({
             name: "Luigi",
             image: "img/avatar_5.jpg",
             message: [
+
                 {
                     status: "input",
                     text: "shiao beloooo"
@@ -136,6 +142,7 @@ var app = new Vue({
             name: "Luisa",
             image: "img/avatar_6.jpg",
             message: [
+
                 {
                     status: "output",
                     text: "heiiii ciao marioo"
@@ -163,6 +170,7 @@ var app = new Vue({
             name: "Claudio",
             image: "img/avatar_7.jpg",
             message: [
+
                 {
                     status: "input",
                     text: "afagdh"
@@ -195,6 +203,7 @@ var app = new Vue({
             name: "Gio",
             image: "img/avatar_8.jpg",
             message: [
+
                 {
                     status: "output",
                     text: "domani a che ora?"
@@ -222,9 +231,17 @@ var app = new Vue({
     methods: {
         userClick: function (i) { // estrae l'index relativo all'utente cliccato
             this.usersIndex = i
-            console.log(i);
-        }
+            // console.log(i);
+            console.log(this.usersIndex);
+        },
+        send: function () {
+            this.users[this.usersIndex].message.push({
+                status: "input",
+                text: this.newInput,
+            })
 
+            this.newInput = "";
+        }
     }
 
 })

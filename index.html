@@ -113,6 +113,7 @@
                         <li class="message" :class="item.status" v-for="item in users[usersIndex].message">
 
                             <p>{{ item.text }}</p>
+                            <!-- <p>{{ newInput }}</p> -->
                             <p class="font-small date">lorem</p>
                         </li>
 
@@ -127,10 +128,10 @@
                         <i class="fa fa-smile-o" aria-hidden="true"></i>
                     </a>
 
-                    <input type="text" placeholder="Scrivi un messaggio">
+                    <input type="text" placeholder="Scrivi un messaggio" v-model="newInput">
 
                     <a href="#" class="audio">
-                        <i class="fa fa-microphone" aria-hidden="true"></i>
+                        <i class="fa fa-microphone" aria-hidden="true" @click="send"></i>
                     </a>
 
                 </div>
