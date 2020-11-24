@@ -110,31 +110,11 @@
 
                     <!-- lista messaggi -->
                     <ul>
-                        <li class="message input" v-for="item in users[usersIndex].input">
+                        <li class="message" :class="item.status" v-for="item in users[usersIndex].message">
 
-                            <p>{{ item }}</p>
+                            <p>{{ item.text }}</p>
                             <p class="font-small date">lorem</p>
                         </li>
-
-                        <li class="message output" v-for="item in users[usersIndex].output">
-                            <p>{{ item }}</p>
-                            <p class="font-small date">lorem</p>
-                        </li>
-
-                        <!-- <li class="message input">
-                            <p> bla bla bla </p>
-                            <p class="font-small date">lorem</p>
-                        </li>
-
-                        <li class="message input">
-                            <p> bla </p>
-                            <p class="font-small date">lorem</p>
-                        </li>
-
-                        <li class="message output">
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore culpa in cumque aspernatur perspiciatis odio itaque accusantium eum ex laborum ratione nisi, sunt quia, excepturi suscipit velit, omnis recusandae ullam.</p>
-                            <p class="font-small date">lorem</p>
-                        </li> -->
 
                     </ul>
 
