@@ -231,16 +231,24 @@ var app = new Vue({
     methods: {
         userClick: function (i) { // estrae l'index relativo all'utente cliccato
             this.usersIndex = i
-            // console.log(i);
             console.log(this.usersIndex);
         },
-        send: function () {
+        send: function () { // invio
             this.users[this.usersIndex].message.push({
                 status: "input",
                 text: this.newInput,
             })
 
             this.newInput = "";
+
+            setTimeout(function () { // risposta
+                
+                this.users[this.usersIndex].message.push({
+                    status: "output",
+                    text: "ok"
+                })
+            }.bind(this), 1000);
+
         }
     }
 
