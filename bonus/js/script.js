@@ -1,3 +1,4 @@
+real
 var app = new Vue({
     el: "#app",
     data: {
@@ -235,23 +236,45 @@ var app = new Vue({
             console.log(this.usersIndex);
         },
         send: function () { // invio
-            this.users[this.usersIndex].message.push({
-                dateMsg: new Date().toLocaleString(),
-                status: "input",
-                text: this.newInput,
-            })
 
-            this.newInput = "";
-
-            setTimeout(() => { // risposta
+            if (this.newInput != "") { // controllo
                 this.users[this.usersIndex].message.push({
                     dateMsg: new Date().toLocaleString(),
-                    status: "output",
-                    text: "ok"
+                    status: "input",
+                    text: this.newInput,
                 })
-            }, 1000);
 
-        }
+                this.newInput = "";
+
+                setTimeout(() => { // risposta
+                    this.users[this.usersIndex].message.push({
+                        dateMsg: new Date().toLocaleString(),
+                        status: "output",
+                        text: "ok"
+                    })
+                }, 1000);
+            }
+            // setTimeout(function () { // modo alternativo
+
+            //     this.users[this.usersIndex].message.push({
+            //         status: "output",
+            //         text: "ok"
+            //     })
+            // }.bind(this), 1000);
+        },
+        scrollToEnd() { //scrollo
+            var container = document.querySelector(".chat");
+            var scrollHeight = container.scrollHeight;
+            container.scrollTop = scrollHeight;
+        },
+
+
+    },
+    mounted() {
+        this.scrollToEnd();
+    },
+    updated() {
+        this.scrollToEnd();
 
     }
 
