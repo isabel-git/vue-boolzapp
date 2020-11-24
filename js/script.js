@@ -7,7 +7,7 @@ var app = new Vue({
             name: "Michele",
             image: "img/avatar_1.jpg",
             input: ["ciao", "kooooooo", "kkkk+"],
-            output: ["come stai?", "jooooooooo"],
+            output: ["come stai?", "joooooo ooooooooooooooo ooooooooo oooooooooooooooo ggggggggggg"],
             // message: [
             //     {
             //         stato: "input",
@@ -17,7 +17,11 @@ var app = new Vue({
             //     {
             //         stato: "output",
             //         text: "come stai?"
-            //     }
+            //     },
+            //     0}
+            //         stato: "input",
+            //         text: "tutto bene dai tu?"
+            //     },
             // ]
         },
         {
