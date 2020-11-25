@@ -272,6 +272,9 @@ var app = new Vue({
             this.userIndex = i
             console.log(this.userIndex);
         },
+        find: function (item) { // filtro ricerca utente
+            return item.name.toLowerCase().includes(this.userSerach);
+        },
         send: function () { // invio
             this.users[this.userIndex].message.push({
                 dateMsg: new Date().toLocaleString(),

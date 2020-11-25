@@ -261,31 +261,27 @@ var app = new Vue({
         }],
 
     },
-    computed: {
-        filterByTerm() { //filtro
-            return this.users.filter(item => {
-                return item.name.toLowerCase().includes(this.userSerach);
-            });
-        }
-    },
     methods: {
         userClick: function (i) { // estrae l'index relativo all'utente cliccato
-            this.userIndex = i
-            console.log(this.userIndex);
-        },
-        send: function () { // invio
+        this.userIndex = i
+        console.log(this.userIndex);
+    },
+    ricerca: function (item) { //filtro
+        return item.name.toLowerCase().includes(this.userSerach);
+    },
+    send: function () { // invio
+        this.users[this.userIndex].message.push({
+            dateMsg: new Date().toLocaleString(),
+            status: "input",
+            text: this.newInput,
+        })
+        
+        this.newInput = "";
+        
+        setTimeout(() => { // risposta
             this.users[this.userIndex].message.push({
                 dateMsg: new Date().toLocaleString(),
-                status: "input",
-                text: this.newInput,
-            })
-
-            this.newInput = "";
-
-            setTimeout(() => { // risposta
-                this.users[this.userIndex].message.push({
-                    dateMsg: new Date().toLocaleString(),
-                    status: "output",
+                status: "output",
                     text: "ok"
                 })
             }, 1000);
@@ -294,8 +290,4 @@ var app = new Vue({
     }
 
 });
-// var the_name="abc";
-// var first_char = the_name.charAt(0);
-// console.log(first_char);
-var boh = "ciao";
-console.log(boh.split(''));
+

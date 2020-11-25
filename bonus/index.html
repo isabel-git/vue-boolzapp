@@ -54,7 +54,7 @@
                 <div class="search-contact">
 
                     <div class="search-box">
-                        <i class="fa fa-search" aria-hidden="true"></i>
+                        <i class="fa fa-search" aria-hidden="true" ></i>
                         <input type="text" placeholder="Crea o inizia una nuova chat" v-model="userSerach">
                     </div>
                     
@@ -63,7 +63,7 @@
                 <!-- lista dei contatti -->
                 <ul class="contacts">
 
-                    <li class="contact" v-for="(item, i) in filterByTerm" @click="userClick(i)">
+                    <li class="contact" v-if="find(item)" v-for="(item, i) in users" :key="item.id" @click="userClick(i)">
                         <div class="box">
                             <img :src="item.image" alt="">
 
@@ -115,13 +115,13 @@
                             <p>{{ item.text }}</p>
                             <p class="font-small date">{{ item.dateMsg }}</p>
                         </li>
-
                     </ul>
 
 
                 </div>
 
                 <div class="text-bar">
+
                     <a href="#" class="emoji">
                         <i class="fa fa-smile-o" aria-hidden="true"></i>
                     </a>
