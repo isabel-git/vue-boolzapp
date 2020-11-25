@@ -129,6 +129,19 @@ i.fa-bell-slash{
 .contacts .contact:hover{
     background-color: rgb(214, 214, 214);
 }
+.contacts .box{
+    max-width: 150px;
+}
+.contacts .text{
+    width: 100%;
+}
+.contacts .text .font-small{
+    border: 1px solid olive;
+    white-space: nowrap; 
+    max-width: 100%; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
 /* fine aside */
 
 /****** inizio aside destro ******/
@@ -148,7 +161,6 @@ aside.right{
     /* regole di debug 
     border: 1px solid red;
    /* fine debug */
-   
 }
 .chat ul{
     display: flex;
@@ -160,6 +172,7 @@ aside.right{
     border-radius: 10px;
     margin-bottom: 10px;
     padding: 10px;
+    word-break: break-all;
     display: flex;
     flex-direction: column;
 }

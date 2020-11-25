@@ -54,8 +54,8 @@
                 <div class="search-contact">
 
                     <div class="search-box">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                        <input type="text" placeholder="Crea o inizia una nuova chat">
+                        <i class="fa fa-search" aria-hidden="true" ></i>
+                        <input type="text" placeholder="Crea o inizia una nuova chat" v-model="userSerach">
                     </div>
                     
                 </div>
@@ -63,18 +63,18 @@
                 <!-- lista dei contatti -->
                 <ul class="contacts">
 
-                    <li class="contact" v-for="(item, i) in users" @click="userClick(i)">
+                    <li class="contact" v-for="(item, i) in filterByTerm" @click="userClick(i)">
                         <div class="box">
                             <img :src="item.image" alt="">
 
                             <div class="text">
                                 <p class="name"><strong>{{ item.name }}</strong></p>
-                                <p class="font-small" href="#">ok</p>
+                                <p class="font-small" href="#">{{ item.message[item.message.length - 1].text }}</p>
                             </div>
 
                         </div>
 
-                        <div class="font-small date">lorem</div>
+                        <div class="font-small date">{{ item.message[item.message.length - 1].dateMsg }}</div>
                     </li>
 
                 </ul>
@@ -88,11 +88,11 @@
                     <div class="contact">
 
                         <div class="box">
-                            <img :src="users[usersIndex].image" alt="">
+                            <img :src="users[userIndex].image" alt="">
 
                             <div class="text">
-                                <p class="name"><strong>{{ users[usersIndex].name }}</strong></p>
-                                <p class="font-small">Ultimo accesso oggi alle lorem</p>
+                                <p class="name"><strong>{{ users[userIndex].name }}</strong></p>
+                                <p class="font-small">Ultimo accesso oggi alle <span class="data">{{ users[userIndex].message[users[userIndex].message.length - 1].dateMsg }}</span></p>
                             </div>
                         </div>
 
@@ -110,12 +110,11 @@
 
                     <!-- lista messaggi -->
                     <ul>
-                        <li class="message" :class="item.status" v-for="item in users[usersIndex].message">
+                        <li class="message" :class="item.status" v-for="item in users[userIndex].message">
 
                             <p>{{ item.text }}</p>
                             <p class="font-small date">{{ item.dateMsg }}</p>
                         </li>
-
                     </ul>
 
 
