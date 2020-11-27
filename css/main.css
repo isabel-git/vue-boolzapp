@@ -136,7 +136,7 @@ i.fa-bell-slash{
     width: 100%;
 }
 .contacts .text .font-small{
-    border: 1px solid olive;
+    /* border: 1px solid olive; */
     white-space: nowrap; 
     max-width: 100%; 
     overflow: hidden;

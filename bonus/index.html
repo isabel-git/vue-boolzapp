@@ -69,12 +69,12 @@
 
                             <div class="text">
                                 <p class="name"><strong>{{ item.name }}</strong></p>
-                                <p class="font-small" href="#">{{ item.message[item.message.length - 1].text }}</p>
+                                <p class="font-small" href="#" v-if="item.message.length > 0">{{ item.message[item.message.length - 1].text }}</p>
                             </div>
 
                         </div>
 
-                        <div class="font-small date">{{ item.message[item.message.length - 1].dateMsg }}</div>
+                        <div class="font-small date" v-if="item.message.length > 0">{{ item.message[item.message.length - 1].dateMsg }}</div>
                     </li>
 
                 </ul>
@@ -92,7 +92,7 @@
 
                             <div class="text">
                                 <p class="name"><strong>{{ users[userIndex].name }}</strong></p>
-                                <p class="font-small">Ultimo accesso oggi alle <span class="data">{{ users[userIndex].message[users[userIndex].message.length - 1].dateMsg }}</span></p>
+                                <p class="font-small">Ultimo accesso oggi alle <span class="data">{{ users[userIndex].ultimoAcc}}</span></p>
                             </div>
                         </div>
 
@@ -110,10 +110,12 @@
 
                     <!-- lista messaggi -->
                     <ul>
-                        <li class="message" :class="item.status" v-for="item in users[userIndex].message">
+                        <li class="message" :class="item.status" v-for="(item, i) in users[userIndex].message">
 
                             <p>{{ item.text }}</p>
                             <p class="font-small date">{{ item.dateMsg }}</p>
+                            <a href="#" @click="remove(item, i)"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+
                         </li>
                     </ul>
 

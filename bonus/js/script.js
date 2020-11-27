@@ -3,10 +3,12 @@ var app = new Vue({
     data: {
         userIndex: 0,
         newInput: "",
+        bot: ["ok", "Devo andare. A domani!", "davvero??", "che fai?", "woow!", "interessante", ":)"],
         userSerach: "",
         users: [{
             name: "Michele",
             image: "img/avatar_1.jpg",
+            ultimoAcc: new Date().toLocaleString(),
             message: [
 
                 {
@@ -44,6 +46,7 @@ var app = new Vue({
         {
             name: "Fabio",
             image: "img/avatar_2.jpg",
+            ultimoAcc: new Date().toLocaleString(),
             message: [
 
                 {
@@ -70,6 +73,7 @@ var app = new Vue({
         {
             name: "Samuele",
             image: "img/avatar_3.jpg",
+            ultimoAcc: new Date().toLocaleString(),
             message: [
 
                 {
@@ -102,6 +106,7 @@ var app = new Vue({
         {
             name: "Mario",
             image: "img/avatar_4.jpg",
+            ultimoAcc: new Date().toLocaleString(),
             message: [
 
                 {
@@ -122,6 +127,7 @@ var app = new Vue({
         {
             name: "Luigi",
             image: "img/avatar_5.jpg",
+            ultimoAcc: new Date().toLocaleString(),
             message: [
 
                 {
@@ -160,6 +166,7 @@ var app = new Vue({
         {
             name: "Luisa",
             image: "img/avatar_6.jpg",
+            ultimoAcc: new Date().toLocaleString(),
             message: [
 
                 {
@@ -192,6 +199,7 @@ var app = new Vue({
         {
             name: "Claudio",
             image: "img/avatar_7.jpg",
+            ultimoAcc: new Date().toLocaleString(),
             message: [
 
                 {
@@ -230,6 +238,7 @@ var app = new Vue({
         {
             name: "Gio",
             image: "img/avatar_8.jpg",
+            ultimoAcc: new Date().toLocaleString(),
             message: [
 
                 {
@@ -260,19 +269,12 @@ var app = new Vue({
         }],
 
     },
-    computed: {
-        filterByTerm() { //filtro
-            return this.users.filter(item => {
-                return item.name.toLowerCase().includes(this.userSerach);
-            });
-        }
-    },
     methods: {
         userClick: function (i) { // estrae l'index relativo all'utente cliccato
             this.userIndex = i
             console.log(this.userIndex);
         },
-        find: function (item) { // filtro ricerca utente
+        find: function (item) { // filtro di ricerca
             return item.name.toLowerCase().includes(this.userSerach);
         },
         send: function () { // invio
@@ -288,10 +290,21 @@ var app = new Vue({
                 this.users[this.userIndex].message.push({
                     dateMsg: new Date().toLocaleString(),
                     status: "output",
-                    text: "ok"
+                    text: this.bot[Math.floor(Math.random() * this.bot.length)]
                 })
             }, 1000);
 
+        },
+        remove: function (item, i) { // rimuovere il mess
+            this.users[this.userIndex].message.splice(i, 1);
+            // console.log(item);
+            // if (item.length === 0 ) {
+            //     this.users[this.userIndex].message.push({
+            //         dateMsg: "",
+            //         status: "",
+            //         text: ""
+            //     })
+            // }
         },
         scrollToEnd() { //scrollo
             let container = document.querySelector(".chat");
