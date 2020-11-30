@@ -149,15 +149,19 @@ aside.right{
     flex-grow: 1;
     flex-shrink: 2;
     height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     /* regole di debug 
     border: 1px solid;
     /* fine debug */
 }
 .chat{
-    height: calc(100% - 140px); 
+    /* height: calc(100% - 140px);  */
+    /* position: relative; */
+    flex-grow: 1;
     overflow: auto;
     background-image: url(../img/sfondo.png);
-    padding: 40px 10%;
     /* regole di debug 
     border: 1px solid red;
    /* fine debug */
@@ -165,8 +169,10 @@ aside.right{
 .chat ul{
     display: flex;
     flex-direction: column;
+    padding: 40px 10%;
 }
 .message{
+    position: relative;
     width: 45%;
     min-height: 50px;
     border-radius: 10px;
@@ -187,8 +193,29 @@ aside.right{
 .message .date{
     align-self: flex-end;
 }
+.message a{
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+/* regole emoticon */
+.emoticon {
+    /* position: absolute; */
+    min-height: 150px;
+    /* bottom: 0; */
+    overflow-x: auto;
+    /* white-space: nowrap; */
+    background-color: rgb(244, 238, 232);
+    padding: 1%;
+}
+.notvisible{
+    display: none;
+}
+.visible{
+    display: block;
+}
 .text-bar{
-    height: 70px;
+    min-height: 70px;
     background-color: rgb(244, 238, 232);
     display: flex;
     padding: 5px;
